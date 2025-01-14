@@ -1,0 +1,11 @@
+player,Detective
+location,loc1,Library,A dusty library filled with books,false,clue1
+feature,feat1,Bookshelf,An old bookshelf covered in cobwebs
+clue,clue1,Letter,A letter with mysterious markings,["letter";"mysterious"],5,The letter mentions a painting.
+location,loc2,Hallway,A dimly lit hallway,false,clue2
+feature,feat2,Portrait,A painting of a stern-looking man
+clue,clue2,Key,A small key hidden under a tile,["key";"hidden"],7,This might open something important
+location,loc3,Study,A quiet study with a large desk,true,clue3
+feature,feat3,Desk,A large mahogany desk with locked drawers
+clue,clue3,Tome,An old book with mysterious runes,["book";"ancient"],10,The crime was committed by a Doctor.
+caseResolution,["letter";"key";"tome"],Moriarty
