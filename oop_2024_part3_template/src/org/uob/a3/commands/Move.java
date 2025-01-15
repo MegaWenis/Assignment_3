@@ -10,7 +10,30 @@ import org.uob.a3.gameobjects.*;
  * If a matching lcoation is found, the player's location is updated to this location.
  * </p>
  */
+
 public class Move extends Command {
 
+    //contructor
+    public Move(String location) {
+        this.value = location;
+        this.commandType = commandType.MOVE;
+
+    }
+
+    public String execute(GameState gameState) {
+
+        Mansion mansion = gameState.getMansion();
+        String targetLocationName = value;
+        Location targetLocation = gameState.getMansion().getLocationByName(targetLocationName);
+        String targetLocationID = targetLocation.getId();
+
+        if (targetLocation !=null) {
+            mansion.setCurrentLocation(targetLocationID);
+            return "You moved to " + targetLocationName + ".";
+        } else {
+            return "You cannot move to " + targetLocationName + ". It is not an available location.";
+        }
+    }
 
 }
+

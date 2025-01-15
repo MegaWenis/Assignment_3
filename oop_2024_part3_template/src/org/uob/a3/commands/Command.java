@@ -37,5 +37,9 @@ public abstract class Command {
     public Command() {
     }
 
+    public String toString() {
+        return "command type: " + commandType + "with value: " + value;
+    }
+
     public abstract String execute(GameState gameState);
 }

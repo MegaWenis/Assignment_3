@@ -117,7 +117,7 @@ public class Location extends GameObject {
                 .append("Description: ").append(getDescription()).append("\n")
                 .append("Clues: ").append(clues.size()).append("\n")
                 .append("Features: ").append(features.size()).append("\n")
-                .append("Locked: ").append(isLocked ? "Yes" : "No");
+                .append("Locked: ").append(isLocked ? "Yes":"No");
         return locationDescription.toString();
     }
 }

@@ -31,4 +31,5 @@ public class Collect extends Command {
 
         return "That clue is not present";
     }
+
 }
