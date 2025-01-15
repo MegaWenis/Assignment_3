@@ -99,6 +99,16 @@ public class Location extends GameObject {
         return allObjects;
     }
 
+    //returns a specific object by name
+    public GameObject findObjectByName(String name) {
+        for (GameObject object : getAll()) {
+            if (object.getName().equalsIgnoreCase(name)) {
+                return object;
+            }
+        }
+        return null;
+    }
+
     //returns all gameobjects in the location
     @Override
     public String toString() {

@@ -34,5 +34,8 @@ public abstract class Command {
      * @param gameState the current state of the game, including player status and environment
      * @return a string describing the outcome of the command execution
      */
+    public Command() {
+    }
+
     public abstract String execute(GameState gameState);
 }
