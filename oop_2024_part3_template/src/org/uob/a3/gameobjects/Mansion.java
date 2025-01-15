@@ -69,9 +69,9 @@ public class Mansion {
     @Override
     public String toString() {
         StringBuilder mansionDescription = new StringBuilder();
-        mansionDescription.append("Mansion: ");
+        mansionDescription.append("Here are the locations you can explore:\n");
         for (Location location : locations.values()) {
-            mansionDescription.append(location.toString()).append("\n");
+            mansionDescription.append(location.getName() +": ").append(location.getDescription()+"\n");
         }
         return mansionDescription.toString();
     }
