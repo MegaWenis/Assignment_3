@@ -39,11 +39,12 @@ public class Notebook extends GameObject {
         }return true;
     }
 
+    //used for the player to string
     public int getNumberOfClues() {
         return clues.size();
     }
 
-    // Returns a string representation of the notebook by calling the superclass's toString method
+    // returns the clues in notebook
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder("You have the following clues:\n");
