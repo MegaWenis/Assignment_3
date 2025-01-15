@@ -12,5 +12,23 @@ import org.uob.a3.gameobjects.*;
  */
 public class Collect extends Command {
 
-   
+    public Collect(String clue){
+        this.commandType = CommandType.COLLECT;
+        this.value = clue;
+    }
+
+    public String execute(GameState gamestate) {
+        Location currentLocation = gamestate.getMansion().getCurrentLocation();
+        String clueName = this.value;
+        Player player = gamestate.getPlayer();
+
+
+        if (currentLocation.hasClue(clueName) || !player.getNotebook().hasClue(clueName)) {
+            Clue clue = currentLocation.getClueByName(clueName);
+            player.getNotebook().addClue(clue);
+            return "You added " + clueName + " to your notebook.";
+        }
+
+        return "That clue is not present";
+    }
 }

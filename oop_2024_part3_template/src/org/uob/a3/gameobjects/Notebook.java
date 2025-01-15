@@ -18,6 +18,15 @@ public class Notebook extends GameObject {
             clues.add(clue);
         }
     }
+    //checks if notebook conatains certain clue by name
+    public boolean hasClue(String clueName) {
+        for (Clue clue : clues) {
+            if (clue.getName().equals(clueName)) {
+                return true;
+            }
+        } return false;
+    }
+
 
     //returns the list of clues
     public List<Clue> getClues() {
