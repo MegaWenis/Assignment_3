@@ -34,8 +34,9 @@ public class Game {
     public static void setup() {
 
         //CHANGE FILENAME LOCATION TO NEW ONE
-
-        String fileName = "/jupyter/home/assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt";
+        // assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt
+        // /jupyter/work/bsi418/src/org/uob/a2/game.txt
+        String fileName = "/jupyter/work/assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt";
         System.out.println("Attempting to load game state from: " + fileName);
         try {
 
