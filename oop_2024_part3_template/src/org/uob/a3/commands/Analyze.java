@@ -34,8 +34,4 @@ public class Analyze extends Command {
         return "The clue or item named '" + value + "' was not found in your notebook. Please check the name and try again.";
     }
 
-    @Override
-    public String toString() {
-        return"Command[type: 'analyze', target: '" + value + "']";
-    }
 }

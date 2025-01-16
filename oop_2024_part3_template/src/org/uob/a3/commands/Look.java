@@ -47,16 +47,16 @@ public class Look extends Command {
 
             case "features":
 
-                ArrayList<Feature> features = currentLocation.getFeatures();
+                ArrayList<Feature> features =currentLocation.getFeatures();
 
                 //appending all visible objects
 
-                if (!features.isEmpty()) {
+                if (!features.isEmpty()){
                     lookResult.append("\nFeatures :");
                     for (Feature feature : features) {
                         lookResult.append(feature.getName()).append("|");
                     }
-                } else {
+                } else{
                     lookResult.append("\nYou can't see anything of note.");
                 }
 

@@ -24,17 +24,13 @@ public class Accuse extends Command {
         if (caseResolution.isResolved()){
             return "The case has already been resolved. Congratulations!";}
 
-        boolean isCorrect = caseResolution.attemptResolution(gameState.getPlayer(),value);
+        boolean isCorrect =caseResolution.attemptResolution(gameState.getPlayer(),value);
 
-        if (isCorrect) {
+        if (isCorrect){
             return "Your accusation is correct! The suspect was indeed " +value + ". You have solved the case. Well done!";
         } else {
             return "Your accusation is incorrect. The suspect " + value +" is not the culprit. Keep investigating!";
         }
     }
 
-    @Override
-    public String toString() {
-        return "Command[type: 'accuse', suspect: '" + value + "']";
-    }
 }
