@@ -20,7 +20,7 @@ public class Parser {
 
     public Command parse(ArrayList<Token> tokens) throws CommandErrorException
     {
-        CommandErrorException exception = new CommandErrorException("Invalid command");
+        CommandErrorException exception = new CommandErrorException();
         //give a command error if the tokens is empty
         if(tokens==null || tokens.isEmpty()){
             throw exception;
