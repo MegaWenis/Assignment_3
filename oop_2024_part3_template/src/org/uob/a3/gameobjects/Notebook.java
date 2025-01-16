@@ -56,14 +56,13 @@ public class Notebook extends GameObject {
     // returns the clues in notebook
     @Override
     public String toString() {
-        StringBuilder output = new StringBuilder("You have the following clues:\n");
+        return "GameObject {id='notebook', name='Notebook', description='Notebook for your clues.'}"
 
-        for (Clue clue:clues){
-
-            output.append("- ").append(clue.getName()).append(": ").append(clue.getDescription()).append("\n");
-
-        }
-        return output.toString();
+        //StringBuilder output = new StringBuilder("You have the following clues:\n");
+        //for (Clue clue:clues){
+            //output.append("- ").append(clue.getName()).append(": ").append(clue.getDescription()).append("\n");
+        //}
+        //return output.toString();
     }
 }
 
