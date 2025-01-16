@@ -62,7 +62,7 @@ public class Game {
                 System.exit(1);
             }
 
-        } catch (Exception e) {
+        } catch(Exception e) {
             System.err.println("Failed to load game state: " + e.getMessage());
             System.exit(1);
         }
@@ -85,23 +85,22 @@ public class Game {
 
             try{
                 tokeniser.tokenise(UserInput);
-                command = parser.parse(tokeniser.getTokens());
+                command =parser.parse(tokeniser.getTokens());
                 turn(command);
             } catch(CommandErrorException error) {
-                System.out.println(error.getMessage());
-            }
+                System.out.println(error.getMessage());}
         }
     }
 
     //handles each turn in the game
     public static void turn(Command command) {
         //gameState.getMap().displayMap();
-        if (command != null&&gameState != null){
+        if (command !=null&&gameState != null){
             System.out.println(command.execute(gameState));
             if (command.commandType==CommandType.QUIT) {
                 System.exit(0);
             }
-        } else {
+        } else{
             System.out.println("game state not initialised");
         }
     }
