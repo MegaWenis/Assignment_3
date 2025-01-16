@@ -28,11 +28,11 @@ public class Clue extends GameObject {
     public int getRelevance() {
         return relevance;
     }
-
+    //<Clue {id='clue1', name='Mysterious Letter', description='A letter with strange markings.', keywords=[letter, mysterious], relevance=5}>
     //clue string
     @Override
     public String toString() {
-        return "Clue[id:'" + id + "', name:'" + name + "', description:'" + description +
-                "', keywords:" + keywords + ", relevance:" + relevance + ", hint:'" + hint + "']";
+        return "Clue {id='" + id + "', name='" + name + "', description='" + description +
+                "', keywords=" + keywords + ", relevance=" + relevance + "}";
     }
 }
