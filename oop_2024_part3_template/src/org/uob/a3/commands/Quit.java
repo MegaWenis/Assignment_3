@@ -11,5 +11,19 @@ import org.uob.a3.gameobjects.*;
  * </p>
  */
 public class Quit extends Command {
+    public Quit() {
+        this.commandType = CommandType.QUIT;
+        this.value = null;
+    }
 
+    public String execute(GameState gameState) {
+        StringBuilder finalMessage = new StringBuilder();
+        Player currentPlayer = gameState.getPlayer();
 
+        finalMessage.append(currentPlayer.toString());
+        finalMessage.append("\nYou were in room:"+"\n"+gameState.getMansion().getCurrentLocation().getName());
+
+        finalMessage.append("\nThanks for playing:)");
+        return finalMessage.toString();
+    }
+}
