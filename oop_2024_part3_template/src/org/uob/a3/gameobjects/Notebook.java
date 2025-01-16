@@ -56,7 +56,7 @@ public class Notebook extends GameObject {
     // returns the clues in notebook
     @Override
     public String toString() {
-        return "GameObject {id='notebook', name='Notebook', description='Notebook for your clues.'}"
+        return "GameObject {id='notebook', name='Notebook', description='Notebook for your clues.'}";
 
         //StringBuilder output = new StringBuilder("You have the following clues:\n");
         //for (Clue clue:clues){
