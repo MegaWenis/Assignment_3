@@ -27,9 +27,10 @@ public class Accuse extends Command {
         boolean isCorrect =caseResolution.attemptResolution(gameState.getPlayer(),value);
 
         if (isCorrect){
-            return "Your accusation is correct! The suspect was indeed " +value + ". You have solved the case. Well done!";
+            return "Congratulations! You correctly accused " + value + " and solved the case!";
         } else {
-            return "Your accusation is incorrect. The suspect " + value +" is not the culprit. Keep investigating!";
+            return "Your accusation of " +value+ " was incorrect. The case remains unsolved.";
+
         }
     }
 
