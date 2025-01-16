@@ -38,6 +38,7 @@ public class Status extends Command {
             case "map" :
                 return gameState.getMansion().toString();
 
+            default: return "Please type 'status' followed by a keyword: 'notebook', 'player', 'map'";
         }
     }
 
