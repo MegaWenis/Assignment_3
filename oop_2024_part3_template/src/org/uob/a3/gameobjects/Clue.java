@@ -32,7 +32,6 @@ public class Clue extends GameObject {
     //clue string
     @Override
     public String toString() {
-        return "Clue {id='" + id + "', name='" + name + "', description='" + description +
-                "', keywords=" + keywords + ", relevance=" + relevance + "}";
+        return "Clue {id='" + id + "', name='" + name + "', description='" + description + "', keywords=" + keywords + ", relevance=" + relevance + "}";
     }
 }

@@ -23,11 +23,9 @@ public class Analyze extends Command {
 
         for (Clue clue : notebook.getClues()) {
             if (clue.getName().equalsIgnoreCase(value)) {
-                return "Analyzing clue: " + clue.getName()+ "\n"+
-                        "Description: " +clue.getDescription() +"\n" +
-                        "Keywords: "+ clue.getKeywords()+ "\n" +
-                        "Relevance: " + clue.getRelevance() +"\n" +
-                        "Hint: " + clue.getHint();
+                //return "Clue {id='" + id + "', name='" + name + "', description='" + description + "', keywords=" + keywords + ", relevance=" + relevance + "}";
+                return "Clue {id='" + clue.getId() + "', name='" + clue.getName() + "', description='" + clue.getDescription() +
+                        "', keywords=" + clue.getKeywords() + ", relevance=" + clue.getRelevance() + "}";
             }
         }
 
