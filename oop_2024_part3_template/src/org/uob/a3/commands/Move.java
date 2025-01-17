@@ -37,7 +37,10 @@ public class Move extends Command {
         if (targetLocation !=null) {
             String targetLocationID = targetLocation.getId();
             mansion.setCurrentLocation(targetLocationID);
-            return "You moved to " + targetLocationName + ".";
+            //expect :
+            //You move to the Hallway.
+            //A dimly lit hallway.
+            return "You move to the " + targetLocationName + ".\n" + targetLocation.getDescription();
         } else {
             return "You cannot move to " + targetLocationName + ". It is not an available location.";
         }
