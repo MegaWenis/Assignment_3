@@ -1,12 +1,12 @@
 player,Leon
 location,loc1,Lobby,An open lobby with a glistening chandelier,false,clue1
 feature,feat1,Bookshelf,An old bookshelf covered in cobwebs
-clue,clue1,Letter,The letter has no return address and has a blood stain,["letter";"mysterious"],5,Time will reveal all signed Count Orlov.
+clue,clue1,NoteBook,The letter has no return address and has a blood stain,["letter";"mysterious"],5,Time will reveal all signed Count Orlov.
 location,loc2,Hallway,A dimly lit hallway,false,clue2
 feature,feat2,Portrait,A painting of a stern-looking man
 clue,clue2,Key,A small key hidden under a tile,["key";"hidden"],7,This might open something important
 location,loc3,Study,A quiet study with a grandfather clock in the corner,true,clue3
 feature,feat3,Desk,A large mahogany desk with locked drawers
 clue,clue3,Grandfather Clock,An ancient clock that does not seem to work,["clock";"ancient"],10,The broken clock contains something *type fix clock*.
-location,loc4,Dining Room,A supremely pompous dining room with mahogany furniture and velvet accents, false, null
+location,loc4,DiningRoom,A supremely pompous dining room with mahogany furniture and velvet accents, false, null
 caseResolution,["letter";"key";"tome"],Moriarty

@@ -53,11 +53,10 @@ public class Notebook extends GameObject {
         return clues.size();
     }
 
-    // returns the clues in notebook
+    // returns notebook
     @Override
     public String toString() {
         return "GameObject {id='notebook', name='Notebook', description='Notebook for your clues.'}";
-
         //StringBuilder output = new StringBuilder("You have the following clues:\n");
         //for (Clue clue:clues){
             //output.append("- ").append(clue.getName()).append(": ").append(clue.getDescription()).append("\n");

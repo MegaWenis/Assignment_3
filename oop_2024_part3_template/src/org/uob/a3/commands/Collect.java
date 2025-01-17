@@ -29,15 +29,14 @@ public class Collect extends Command {
         clueName = resolveClueKeyword(clueName);
 
         if (currentLocation.hasClue(clueName)) {
+
             Clue clue =currentLocation.getClueByName(clueName);
 
             if (clue == null) {
-                return "Clue '" + clueName + "' could not be found in the current location.";
-            }
+                return "Clue '" + clueName + "' could not be found in the current location.";}
 
             if (player.getNotebook().hasClue(clueName)) {
-                return "You already have the clue '" +clue.getName() + "' in your notebook.";
-            }
+                return "You already have the clue '" +clue.getName() + "' in your notebook.";}
 
             player.getNotebook().addClue(clue);
 

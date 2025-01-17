@@ -40,6 +40,12 @@ public class Parser {
         //checking the type of command and returning new command clas
 
         switch (typeOfCommand){
+            case "analyze":  if(argument.isEmpty()){throw exception;}
+                return new Analyze(argument);
+
+            case "inspect": if(argument.isEmpty()){throw exception;}
+                return new Inspect(argument);
+
             case "move": if(argument.isEmpty()){throw exception;}
                 return new Move(argument);
 
@@ -47,6 +53,8 @@ public class Parser {
                 return new Collect(argument);
 
             case "look":return new Look(argument);
+
+            case "score":return new Score();
 
             case "quit": return new Quit();
             case "status":
