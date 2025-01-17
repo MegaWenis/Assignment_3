@@ -46,7 +46,7 @@ public class Help extends Command {
 
         switch (topic.toLowerCase()) {
             case "move":
-                return "MOVE Command: Move in a specific location. (e.g., ’move location_name’)";
+                return "MOVE Command: Move in a specific location. (e.g., ’move Hallway’)";
             case "collect":
                 return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook. (e.g., 'collect item_name')";
             case "analyze":
