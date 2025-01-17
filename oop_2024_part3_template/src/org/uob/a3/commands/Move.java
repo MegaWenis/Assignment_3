@@ -40,7 +40,7 @@ public class Move extends Command {
             //expect :
             //You move to the Hallway.
             //A dimly lit hallway.
-            return "You move to the " + targetLocationName + ".\n" + targetLocation.getDescription();
+            return "You move to the " + targetLocation.getName() + ".\n" + targetLocation.getDescription();
         } else {
             return "You cannot move to " + targetLocationName + ". It is not an available location.";
         }
