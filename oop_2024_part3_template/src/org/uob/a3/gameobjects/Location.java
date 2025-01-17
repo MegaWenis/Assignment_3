@@ -48,7 +48,7 @@ public class Location extends GameObject {
     //returns the clue with inputted name
     public Clue getClueByName(String name) {
         for (Clue clue: clues) {
-            if (clue.getName().equals(name)) {
+            if (clue.getName().equalsIgnoreCase(name)) {
                 return clue;
             }
         }
@@ -80,7 +80,12 @@ public class Location extends GameObject {
 
     //self-explanatory
     public boolean hasClue(String clueName) {
-        return getClueByName(clueName) != null;
+        for (Clue clue : clues) {
+            if (clue.getName().equalsIgnoreCase(clueName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean hasFeature(String name) {

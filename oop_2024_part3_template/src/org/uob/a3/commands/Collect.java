@@ -34,11 +34,14 @@ public class Collect extends Command {
                 return "You already have the clue '" + clueName +"' in your notebook.";
             }
 
+            //expected: <There is no clue matching 'invalid' in this location.> but was: <That clue is not present in the current location.>
+
+            //expected: <You collected the clue 'Mysterious Letter' and added it to your notebook.> but was: <That clue is not present in the current location.>
             player.getNotebook().addClue(clue);
 
             return "You collected the clue '"+ clue.getName() + "' and added it to your notebook.";
         }
 
-        return "That clue is not present in the current location.";
+        return "There is no clue matching '"+clueName+"' in this location";
     }
 }
