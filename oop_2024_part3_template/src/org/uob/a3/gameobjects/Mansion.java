@@ -35,7 +35,7 @@ public class Mansion {
     //retrieves location by name
     public Location getLocationByName(String name) {
         for (Location location : locations.values()) {
-            if (location.getName().equals(name)) {
+            if (location.getName().equalsIgnoreCase(name)) {
                 return location;
             }
         }
@@ -73,7 +73,7 @@ public class Mansion {
 
         Location grandHall = getLocationByName("Grand Hall");
 
-        //grand hall first
+        // grand hall first
         if (grandHall != null) {
             mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
             mansionDescription.append("Description: ").append(grandHall.getDescription()).append("\n");
@@ -81,9 +81,10 @@ public class Mansion {
             mansionDescription.append("Features: ").append(grandHall.getFeatures().size()).append("\n");
             mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
         }
-        //the rest
+
+        // the rest
         for (Location location : locations.values()) {
-            if (!location.getName().equals("Grand Hall"))
+            if (!location.getName().equals("Grand Hall")) {
                 mansionDescription.append("Location: ").append(location.getName()).append("\n");
                 mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
                 mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
