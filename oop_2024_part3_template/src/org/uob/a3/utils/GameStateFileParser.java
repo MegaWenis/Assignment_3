@@ -64,8 +64,7 @@ public class GameStateFileParser {
      */
     private static GameState parseGameState(BufferedReader br) throws IOException {
         GameState g = new GameState();
-        Mansion mansion = new Mansion();
-        g.setMansion(mansion);
+
         ArrayList<String> fileLines = new ArrayList<>();
         String line;
         // Read all lines from the BufferedReader into the fileLines list

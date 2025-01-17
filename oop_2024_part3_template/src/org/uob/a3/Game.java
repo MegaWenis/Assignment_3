@@ -38,9 +38,12 @@ public class Game {
         // /jupyter/work/bsi418/src/org/uob/a2/game.txt
         String fileName = "/jupyter/work/assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt";
         System.out.println("Attempting to load game state from: " + fileName);
+
         try {
 
             gameState = GameStateFileParser.parse(fileName);
+            Mansion mansion = new Mansion();
+            gameState.setMansion(mansion);
             scanner = new Scanner(System.in);
             parser = new Parser();
             tokeniser= new Tokeniser();
