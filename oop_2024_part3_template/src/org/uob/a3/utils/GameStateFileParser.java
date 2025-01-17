@@ -73,48 +73,53 @@ public class GameStateFileParser {
         ArrayList<String> fileLines = new ArrayList<>();
         String line;
         // Read all lines from the BufferedReader into the fileLines list
-        while ((line = br.readLine()) != null) {
+        while ((line = br.readLine()) != null){
             fileLines.add(line.trim());
         }
 
         Location currentLocation = null;
-        ArrayList<Location> locations = new ArrayList<>();
+        ArrayList<Location> locations =new ArrayList<>();
 
         for (String entry : fileLines) {
-            if (entry.startsWith("player")) {
+            if(entry.startsWith("player")) {
+
                 String[] parts = entry.split(",", 2);
                 String name = parts[1];
                 g.setPlayer(new Player(name));
-            } else if (entry.startsWith("location")) {
+            } else if (entry.startsWith("location")){
+
                 String[] parts = entry.split(",", 6);
                 String id = parts[1];
-                String name = parts[2];
+                String name =parts[2];
                 String description = parts[3];
                 boolean isLocked = Boolean.parseBoolean(parts[4]);
                 String requiredClueId = parts[5];
 
-                currentLocation = new Location(id, name, description, isLocked, requiredClueId);
+                currentLocation = new Location(id, name, description,isLocked, requiredClueId);
                 locations.add(currentLocation);
-            } else if (entry.startsWith("feature") && currentLocation != null) {
+
+            } else if (entry.startsWith("feature") && currentLocation != null){
                 String[] parts = entry.split(",", 4);
                 String id = parts[1];
                 String name = parts[2];
                 String description = parts[3];
+
                 currentLocation.addFeature(new Feature(id, name, description));
             } else if (entry.startsWith("clue") && currentLocation != null) {
                 String[] parts = entry.split(",", 7);
                 String id = parts[1];
                 String name = parts[2];
+
                 String description = parts[3];
                 List<String> keywords = GameStateFileParser.parseKeywords(parts[4]);
                 int relevance = Integer.parseInt(parts[5]);
                 String hint = parts[6];
 
-                Clue clue = new Clue(id, name, description, keywords, relevance, hint);
+                Clue clue = new Clue(id,name, description, keywords, relevance, hint);
                 currentLocation.addClue(clue);
-            } else if (entry.startsWith("caseResolution") && currentLocation != null) {
+            }else if (entry.startsWith("caseResolution") && currentLocation != null) {
                 String[] parts = entry.split(",", 3);
-                String solution = parts[2];
+                String solution =parts[2];
                 CaseResolution caseResolution = new CaseResolution(GameStateFileParser.parseKeywords(parts[1]), solution);
                 g.setCaseResolution(caseResolution);
             }

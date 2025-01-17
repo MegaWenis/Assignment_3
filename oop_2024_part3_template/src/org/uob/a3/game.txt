@@ -8,5 +8,5 @@ clue,clue2,Key,A small key hidden under a tile,["key";"hidden"],7,This might ope
 location,loc3,Study,A quiet study with a grandfather clock in the corner,true,clue3
 feature,feat3,Desk,A large mahogany desk with locked drawers
 clue,clue3,Grandfather Clock,An ancient clock that does not seem to work,["clock";"ancient"],10,The broken clock contains something *type fix clock*.
-location,loc4,Dining Room, A supremely pompous dining room with mahogany furniture and velvet accents, false
+location,loc4,Dining Room,A supremely pompous dining room with mahogany furniture and velvet accents, false, null
 caseResolution,["letter";"key";"tome"],Moriarty
