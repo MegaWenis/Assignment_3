@@ -25,9 +25,9 @@ public class Move extends Command {
         Mansion mansion = gameState.getMansion();
         String targetLocationName = value;
         Location targetLocation = gameState.getMansion().getLocationByName(targetLocationName);
-        String targetLocationID = targetLocation.getId();
 
         if (targetLocation !=null) {
+            String targetLocationID = targetLocation.getId();
             mansion.setCurrentLocation(targetLocationID);
             return "You moved to " + targetLocationName + ".";
         } else {
