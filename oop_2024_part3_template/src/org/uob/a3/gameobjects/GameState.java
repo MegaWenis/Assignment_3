@@ -29,7 +29,7 @@ public class GameState {
 
     //well-defined gamestate
     public GameState(Mansion mansion, Player player,List<Clue> collectedClues, CaseResolution caseResolution) {
-        this.mansion = mansion != null ?mansion: new Mansion(); // Ensure Mansion is not null
+        this.mansion = mansion != null ?mansion: new Mansion();//mansion is not null
         this.player= player;
         this.collectedClues =new ArrayList<>(collectedClues);
         this.caseResolution = caseResolution;
