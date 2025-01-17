@@ -24,7 +24,15 @@ public class Move extends Command {
 
         Mansion mansion = gameState.getMansion();
         String targetLocationName = value;
-        Location targetLocation = gameState.getMansion().getLocationByName(targetLocationName);
+        Location targetLocation = null;
+
+        //check for location and ignore cases
+        for (Location location :mansion.getLocations()) {
+            if (location.getName().equalsIgnoreCase(targetLocationName)) {
+                targetLocation = location;
+                break;
+            }
+        }
 
         if (targetLocation !=null) {
             String targetLocationID = targetLocation.getId();
