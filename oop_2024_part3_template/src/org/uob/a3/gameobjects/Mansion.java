@@ -71,24 +71,13 @@ public class Mansion {
         StringBuilder mansionDescription = new StringBuilder();
         mansionDescription.append("Mansion:\n");
 
-        //grand hall firast
-        Location grandHall = locations.get("Grand Hall");
-        if (grandHall != null) {
-            mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
-            mansionDescription.append("Description: ").append(grandHall.getDescription()).append("\n");
-            mansionDescription.append("Clues: ").append(grandHall.getClues().size()).append("\n");
-            mansionDescription.append("Features: ").append(grandHall.getFeatures().size()).append("\n");
-            mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
-        }
-            //bloody formatting
+        // Iterate through all locations and append their details
         for (Location location : locations.values()) {
-            if (!location.getName().equals("Grand Hall")) {
-                mansionDescription.append("Location: ").append(location.getName()).append("\n");
-                mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
-                mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
-                mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
-                mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
-            }
+            mansionDescription.append("Location: ").append(location.getName()).append("\n");
+            mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
+            mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
+            mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
+            mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
         }
 
         return mansionDescription.toString();
