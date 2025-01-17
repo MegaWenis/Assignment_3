@@ -26,6 +26,7 @@ public class Collect extends Command {
 
             Clue clue = currentLocation.getClueByName(clueName);
 
+            if (clueName == "Mysterious Letter")
 
             if (clue ==null) {
                 return "Clue '" + clueName + "' could not be found in the current location.";
@@ -42,6 +43,6 @@ public class Collect extends Command {
             return "You collected the clue '"+ clue.getName() + "' and added it to your notebook.";
         }
 
-        return "There is no clue matching '"+clueName+"' in this location";
+        return "There is no clue matching '"+clueName+"' in this location.";
     }
 }

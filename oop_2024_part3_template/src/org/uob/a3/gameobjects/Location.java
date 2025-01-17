@@ -80,8 +80,14 @@ public class Location extends GameObject {
 
     //self-explanatory
     public boolean hasClue(String clueName) {
+        // Standardize clueName for comparison (case insensitive)
+        clueName = clueName.trim().toLowerCase();
+
         for (Clue clue : clues) {
-            if (clue.getName().equalsIgnoreCase(clueName)) {
+            String clueDisplayName = clue.getName().toLowerCase();
+
+            // Check if the clue name contains the keyword (case-insensitive)
+            if (clueDisplayName.contains(clueName)) {
                 return true;
             }
         }
