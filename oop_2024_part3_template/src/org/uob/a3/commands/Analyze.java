@@ -28,8 +28,10 @@ public class Analyze extends Command {
                         "', keywords=" + clue.getKeywords() + ", relevance=" + clue.getRelevance() + "}";
             }
         }
-
-        return "The clue or item named '" + value + "' was not found in your notebook. Please check the name and try again.";
+        //expected: <Analyze what? Please specify an item or clue to analyze.>
+        if (value ==""||value==null){
+            return "Analyze what? Please specify an item or clue to analyze.";}
+        return "You don't have any clue or item named '"+ value+"' to analyze.";
     }
 
 }

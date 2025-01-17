@@ -65,14 +65,20 @@ public class Mansion {
         }
     }
 
-    //returns string representation of mansion with all the locations
+    //returns string representation of mansion with a
     @Override
     public String toString() {
         StringBuilder mansionDescription = new StringBuilder();
-        mansionDescription.append("Here are the locations you can explore:\n");
+        mansionDescription.append("Mansion:\n");
+
         for (Location location : locations.values()) {
-            mansionDescription.append(location.getName() +": ").append(location.getDescription()+"\n");
+            mansionDescription.append("Location: ").append(location.getName()).append("\n");
+            mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
+            mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
+            mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
+            mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
         }
+
         return mansionDescription.toString();
     }
 }
