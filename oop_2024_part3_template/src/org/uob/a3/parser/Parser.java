@@ -43,8 +43,8 @@ public class Parser {
             case "analyze":  if(argument.isEmpty()){throw exception;}
                 return new Analyze(argument);
 
-            case "inspect": if(argument.isEmpty()){throw exception;}
-                return new Inspect(argument);
+            case "accuse": if(argument.isEmpty()){throw exception;}
+                return new Accuse(argument);
 
             case "move": if(argument.isEmpty()){throw exception;}
                 return new Move(argument);
