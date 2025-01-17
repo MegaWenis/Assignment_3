@@ -23,7 +23,7 @@ public class Collect extends Command {
         Player player = gamestate.getPlayer();
 
         if (clueName.isEmpty()) {
-            return "You must specify a clue to collect.";
+            return "Collect what? Please specify a keyword or name.";
         }
 
         clueName = resolveClueKeyword(clueName);

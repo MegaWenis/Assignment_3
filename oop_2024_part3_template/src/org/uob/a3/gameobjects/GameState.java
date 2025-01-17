@@ -22,7 +22,7 @@ public class GameState {
     //blank gamestate
     public GameState() {
         this.mansion = new Mansion();
-        this.player = null;
+        this.player = new Player();
         this.collectedClues = new ArrayList<>();
         this.caseResolution =null;
     }
@@ -70,21 +70,17 @@ public class GameState {
     @Override
     public String toString() {
         StringBuilder gameStateDescription = new StringBuilder();
-        gameStateDescription.append("GameState:\n");
 
-        gameStateDescription.append("Mansion:\n").append(mansion.toString()).append("\n");
-
-        gameStateDescription.append("Player:\n").append(player.toString()).append("\n");
-
-
-        gameStateDescription.append("Collected Clues:\n");
-        for (Clue clue : collectedClues) {
-            gameStateDescription.append(clue.toString()).append("\n");
-        }
-
-        gameStateDescription.append("Case Resolution:\n").append(caseResolution.toString()).append("\n");
-
+        //dumb formating
+        gameStateDescription.append("GameState {");
+        gameStateDescription.append("mansion=").append(mansion.toString()).append(", ");
+        gameStateDescription.append("player=").append(player.toString()).append(", ");
+        gameStateDescription.append("Notebook:").append(player.getNotebook().toString()).append(", ");
+        gameStateDescription.append("collectedClues=").append(collectedClues.toString()).append(", ");
+        gameStateDescription.append("caseResolution=").append(caseResolution.toString());
+        gameStateDescription.append("}");
 
         return gameStateDescription.toString();
     }
+
 }
