@@ -21,7 +21,7 @@ public class GameState {
 
     //blank gamestate
     public GameState() {
-        this.mansion = null;
+        this.mansion = new Mansion();
         this.player = null;
         this.collectedClues = new ArrayList<>();
         this.caseResolution =null;
