@@ -26,6 +26,7 @@ public class Analyze extends Command {
 
         for (Clue clue :notebook.getClues()) {
             if (clue.getName().equalsIgnoreCase(value.trim())) {
+                System.out.println(clue.getHint());
                 return "Clue {id='" + clue.getId() + "', name='" + clue.getName() + "', description='" + clue.getDescription() +
                         "', keywords=" + clue.getKeywords() + ", relevance=" + clue.getRelevance() + "}";
             }

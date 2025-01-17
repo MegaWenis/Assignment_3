@@ -65,6 +65,23 @@ public class Mansion {
         }
     }
 
+    //returns a nice map
+    public String displayMap() {
+        StringBuilder map =new StringBuilder();
+        map.append("Map of the Mansion:\n");
+
+        for(Location location : locations.values()) {
+            if (location.isLocked()) {
+                map.append(location.getName()).append(" - (LOCKED) ")
+                        .append("You need a clue to unlock this room.\n");
+            } else{
+                map.append(location.getName()).append(" - (OPEN)\n");
+            }
+        }
+
+        return map.toString();
+    }
+
     //returns string representation of mansion with a
     @Override
     public String toString() {
