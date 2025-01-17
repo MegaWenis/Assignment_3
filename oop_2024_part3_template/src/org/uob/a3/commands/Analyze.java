@@ -22,7 +22,7 @@ public class Analyze extends Command {
         Notebook notebook= gameState.getPlayer().getNotebook();
 
         for (Clue clue : notebook.getClues()) {
-            if (clue.getName().equalsIgnoreCase(value)) {
+            if (clue.getName().equalsIgnoreCase(value.toLowerCase())) {
                 //return "Clue {id='" + id + "', name='" + name + "', description='" + description + "', keywords=" + keywords + ", relevance=" + relevance + "}";
                 return "Clue {id='" + clue.getId() + "', name='" + clue.getName() + "', description='" + clue.getDescription() +
                         "', keywords=" + clue.getKeywords() + ", relevance=" + clue.getRelevance() + "}";
