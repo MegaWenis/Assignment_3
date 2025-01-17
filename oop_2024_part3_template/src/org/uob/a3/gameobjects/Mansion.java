@@ -71,7 +71,7 @@ public class Mansion {
         StringBuilder mansionDescription = new StringBuilder();
         mansionDescription.append("Mansion:\n");
 
-        //grand hall first
+        //grand hall firast
         Location grandHall = locations.get("Grand Hall");
         if (grandHall != null) {
             mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
@@ -80,8 +80,7 @@ public class Mansion {
             mansionDescription.append("Features: ").append(grandHall.getFeatures().size()).append("\n");
             mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
         }
-
-        //then the rst
+            //bloody formatting
         for (Location location : locations.values()) {
             if (!location.getName().equals("Grand Hall")) {
                 mansionDescription.append("Location: ").append(location.getName()).append("\n");
@@ -94,5 +93,6 @@ public class Mansion {
 
         return mansionDescription.toString();
     }
+
 
 }
