@@ -42,14 +42,11 @@ public class Player extends Object {
     public String toString() {
         StringBuilder playerDescription = new StringBuilder();
 
-        // Print the player's name with the required format
         playerDescription.append("Player Name: ").append(this.name).append("\n");
 
-        // Print the notebook heading
-        playerDescription.append("Notebook:\n");
 
-        // Assuming the player has a collection of Clues in a list (or similar structure)
-        for (Clue clue : notebook.getClues()) {
+        playerDescription.append("Notebook:\n");
+        for (Clue clue :notebook.getClues()) {
             playerDescription.append("[Clue {id='").append(clue.getId()).append("', ");
             playerDescription.append("name='").append(clue.getName()).append("', ");
             playerDescription.append("description='").append(clue.getDescription()).append("', ");
@@ -57,7 +54,9 @@ public class Player extends Object {
             playerDescription.append("relevance=").append(clue.getRelevance()).append("}]\n");
         }
 
-        return playerDescription.toString();
+        return playerDescription.toString().trim();
     }
+
+}
 }
 
