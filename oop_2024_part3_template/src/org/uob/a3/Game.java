@@ -42,8 +42,6 @@ public class Game {
         try {
 
             gameState = GameStateFileParser.parse(fileName);
-            Mansion mansion = new Mansion();
-            gameState.setMansion(mansion);
             scanner = new Scanner(System.in);
             parser = new Parser();
             tokeniser= new Tokeniser();

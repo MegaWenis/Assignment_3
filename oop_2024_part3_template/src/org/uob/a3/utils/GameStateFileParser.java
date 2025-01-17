@@ -63,10 +63,12 @@ public class GameStateFileParser {
      * @throws IOException if an I/O error occurs
      */
     private static GameState parseGameState(BufferedReader br) throws IOException {
+
         GameState g = new GameState();
 
         Mansion mansion = new Mansion();
         g.setMansion(mansion);
+
 
         ArrayList<String> fileLines = new ArrayList<>();
         String line;

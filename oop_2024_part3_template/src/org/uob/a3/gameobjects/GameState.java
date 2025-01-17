@@ -39,7 +39,8 @@ public class GameState {
     //getters and setters
     public Mansion getMansion() {return mansion;}
 
-    public void setMansion(Mansion mansion) {this.mansion = mansion;
+    public void setMansion(Mansion mansion) {
+        this.mansion = mansion;
     }
 
     public Player getPlayer() {return player;}
