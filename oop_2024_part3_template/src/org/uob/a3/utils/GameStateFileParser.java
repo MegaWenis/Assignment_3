@@ -67,7 +67,7 @@ public class GameStateFileParser {
         GameState g = new GameState();
 
         Mansion mansion = new Mansion();
-        g.setMansion(mansion);
+        //g.setMansion(mansion);
 
 
         ArrayList<String> fileLines = new ArrayList<>();
