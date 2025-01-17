@@ -58,7 +58,7 @@ public class Help extends Command {
             case "status":
                 return "STATUS Command: View your current status, including notebook and player.";
             case "help":
-                return "HELP Command: Get help about a specific command or general gameplay. Example: HELP move.";
+                return "HELP Command: Get help about a specific command or general gameplay. Example: 'HELP move'.";
             case "quit":
                 return "QUIT Command: Exit the game. Example: QUIT.";
             default:
