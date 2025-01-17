@@ -22,11 +22,13 @@ public class Collect extends Command {
         String clueName = this.value;
         Player player = gamestate.getPlayer();
 
+        if (clueName == null || clueName.trim().isEmpty()) {
+            return "You must specify a clue to collect.";
+        }
+
         if (currentLocation.hasClue(clueName)) {
 
             Clue clue = currentLocation.getClueByName(clueName);
-
-            if (clueName == "Mysterious Letter")
 
             if (clue ==null) {
                 return "Clue '" + clueName + "' could not be found in the current location.";
