@@ -71,17 +71,28 @@ public class Mansion {
         StringBuilder mansionDescription = new StringBuilder();
         mansionDescription.append("Mansion:\n");
 
-        // Iterate through all locations and append their details
+        Location grandHall = getLocationByName("Grand Hall");
+
+        //grand hall first
+        if (grandHall != null) {
+            mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
+            mansionDescription.append("Description: ").append(grandHall.getDescription()).append("\n");
+            mansionDescription.append("Clues: ").append(grandHall.getClues().size()).append("\n");
+            mansionDescription.append("Features: ").append(grandHall.getFeatures().size()).append("\n");
+            mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
+        }
+        //the rest
         for (Location location : locations.values()) {
-            mansionDescription.append("Location: ").append(location.getName()).append("\n");
-            mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
-            mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
-            mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
-            mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
+            if (!location.getName().equals("Grand Hall"))
+                mansionDescription.append("Location: ").append(location.getName()).append("\n");
+                mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
+                mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
+                mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
+                mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
+            }
         }
 
         return mansionDescription.toString();
     }
-
 
 }
