@@ -17,35 +17,28 @@ public class Collect extends Command {
         this.value = clue;
     }
 
-    public class Collect extends Command {
+    public String execute(GameState gamestate) {
+        Location currentLocation = gamestate.getMansion().getCurrentLocation();
+        String clueName = this.value;
+        Player player = gamestate.getPlayer();
 
-        public Collect(String clue){
-            this.commandType = CommandType.COLLECT;
-            this.value = clue;
-        }
+        if (currentLocation.hasClue(clueName)) {
 
-        public String execute(GameState gamestate) {
-            Location currentLocation =gamestate.getMansion().getCurrentLocation();
-            String clueName = this.value;
-            Player player = gamestate.getPlayer();
+            Clue clue = currentLocation.getClueByName(clueName);
 
-            if (currentLocation.hasClue(clueName)) {
-                Clue clue = currentLocation.getClueByName(clueName);
 
-                if (clue == null) {
-                    return "Clue '" + clueName +"' could not be found in the current location.";
-                }
-
-                if (player.getNotebook().hasClue(clueName)) {
-                    return "You already have the clue '" +clueName + "' in your notebook.";
-                }
-
-                player.getNotebook().addClue(clue);
-
-                return "You collected the clue '" +clue.getName() + "' and added it to your notebook.";
+            if (clue ==null) {
+                return "Clue '" + clueName + "' could not be found in the current location.";
+            }
+            if (player.getNotebook().hasClue(clueName)) {
+                return "You already have the clue '" + clueName +"' in your notebook.";
             }
 
-            return "That clue is not present in the current location.";
+            player.getNotebook().addClue(clue);
+
+            return "You collected the clue '"+ clue.getName() + "' and added it to your notebook.";
         }
+
+        return "That clue is not present in the current location.";
     }
 }
