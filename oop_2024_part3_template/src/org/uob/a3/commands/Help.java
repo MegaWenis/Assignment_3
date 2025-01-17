@@ -43,25 +43,29 @@ public class Help extends Command {
 
     public String topicHelp() {
         String topic = this.value;
+
         switch (topic.toLowerCase()) {
             case "move":
-                return "MOVE <location>: Move in a specific location. Example: MOVE hallway.";
+                return "MOVE Command: Move in a specific location. Example: MOVE hallway.";
             case "collect":
-                return "COLLECT <clue>: collect a clue from the room if it is present and add it to your notebook.";
+                return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook.";
             case "analyze":
-                return "ANALYZE <feature>: Look in detail at a specific feature in the room to discover details about it.";
-            case "accuse": return "ACCUSE <suspect_name>: Accuse a suspect once you are sure it is them, if correct you win the game.";
+                return "ANALYZE Command: Look in detail at a specific feature in the room to discover details about it.";
+            case "accuse":
+                return "ACCUSE Command: Accuse a suspect once you are sure it is them, if correct you win the game.";
             case "look":
-                return "LOOK: Look around the current room and see what's available.";
+                return "LOOK Command: Look around the current room and see what's available.";
             case "status":
-                return "STATUS: View your current status, including notebook and player.";
+                return "STATUS Command: View your current status, including notebook and player.";
             case "help":
-                return "HELP [topic]: Get help about a specific command or general gameplay. Example: HELP move.";
+                return "HELP Command: Get help about a specific command or general gameplay. Example: HELP move.";
             case "quit":
-                return "QUIT: Exit the game. Example: QUIT.";
-            default: return "Sorry, no help is available for the topic '" + topic + "'. Try HELP for general instructions.";
+                return "QUIT Command: Exit the game. Example: QUIT.";
+            default:
+                return "Sorry, no help is available for the topic '" + topic + "'. Try HELP for general instructions.";
         }
     }
+
 
     @Override
     public String toString() {

@@ -40,7 +40,7 @@ public abstract class GameObject {
     //String describing the gameobject
     @Override
     public String toString() {
-        return "GameObject{" +
+        return "GameObject {" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

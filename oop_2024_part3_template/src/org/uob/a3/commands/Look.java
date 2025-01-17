@@ -23,12 +23,14 @@ public class Look extends Command {
         String target = this.value;
         StringBuilder lookResult = new StringBuilder();
         Location currentLocation = gameState.getMansion().getCurrentLocation();
+        String roomName =currentLocation.getName();
 
         //executing look depending on the target class
         switch (target.toLowerCase()) {
 
             case "room":
-
+                lookResult.append(currentLocation.getName());
+                lookResult.append("\n");
                 lookResult.append(gameState.getMansion().getCurrentLocation().getDescription());
 
                 //appending all visible objects
@@ -49,10 +51,10 @@ public class Look extends Command {
 
                 ArrayList<Feature> features =currentLocation.getFeatures();
 
-                //appending all visible objects
+                //appending all visible features
 
                 if (!features.isEmpty()){
-                    lookResult.append("\nFeatures :");
+                    lookResult.append("\nfeatures :");
                     for (Feature feature : features) {
                         lookResult.append(feature.getName()).append("|");
                     }
@@ -62,14 +64,14 @@ public class Look extends Command {
 
                 break;
 
-
+            //<There is nothing named 'Nonexistent' to look at in this location.> but was: <You can't see anything of note about 'Nonexistent'.>
             default:
                 //in case they ask for a specific object
                 GameObject object = currentLocation.findObjectByName(target);
                 if (object != null) {
                     lookResult.append(object.getDescription());
                 } else {
-                    lookResult.append("You can't see anything of note about '").append(target).append("'.");
+                    lookResult.append("There is nothing named '").append(target).append("' to look at in this location.");
                 }
                 break;
         }

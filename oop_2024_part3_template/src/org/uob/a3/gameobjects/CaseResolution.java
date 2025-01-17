@@ -58,15 +58,29 @@ public class CaseResolution {
 
     @Override
     public String toString() {
-        StringBuilder resolutionString = new StringBuilder();
-        resolutionString.append("Case Resolution Status: ");
+        StringBuilder sb = new StringBuilder();
 
-        resolutionString.append(resolved ? "Resolved" : "Unresolved").append("\n");
-        resolutionString.append("Required Clues:\n");
-        for (String clue : requiredClues){
-            resolutionString.append("- ").append(clue).append("\n");
+        // Assuming GameState has a mansion, player, and collectedClues
+        sb.append("GameState {mansion=").append(gameState.getMansion()).append("\n");
+
+        sb.append("player=").append(gameState.getPlayer()).append("\n");
+
+        sb.append("Notebook:\n").append(gameState.getPlayer().getNotebook()).append("\n");
+
+        sb.append("collectedClues=").append(gameState.getCollectedClues()).append("\n");
+
+        sb.append("caseResolution=").append(this).append("\n"); // or gameState.getCaseResolution() if that's more appropriate
+
+        sb.append("Required Clues:\n");
+        for (String clue : requiredClues) {
+            sb.append("- ").append(clue).append("\n");
         }
-        return resolutionString.toString();
+
+        sb.append("}");
+
+        return sb.toString();
     }
+
+
 }
 
