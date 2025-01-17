@@ -25,7 +25,16 @@ public class CaseResolution {
 
     //checks players notebook to attempt resolution
     public boolean attemptResolution(Player player,String playerSolution) {
-        if (player.getNotebook().containsAll(requiredClues) && solution.equalsIgnoreCase(playerSolution.trim())) {
+
+        Boolean correctPlayer = false;
+        String case1 = "moriarty";
+        String case2 = "mr.moriarty";
+
+        if (solution.equalsIgnoreCase(playerSolution.trim())||case1.equalsIgnoreCase(playerSolution.trim())||case2.equalsIgnoreCase(playerSolution.trim())){
+            correctPlayer = true;
+        }
+
+        if (player.getNotebook().containsAll(requiredClues) && correctPlayer) {
             resolved = true;
             return true;
         }
