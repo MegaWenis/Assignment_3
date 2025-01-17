@@ -13,24 +13,30 @@ import java.util.ArrayList;
  */
 public class Tokeniser {
 
-
     private final ArrayList<Token> tokens;
 
-    public Tokeniser() {this.tokens = new ArrayList<>();}
+    public Tokeniser() {
+        this.tokens = new ArrayList<>();
+    }
 
     public void tokenise(String s) {
         tokens.clear();
         String sanitisedInput = sanitise(s);
-        String[] words =sanitisedInput.split(" ");
+        String[] words = sanitisedInput.split(" ");
 
         for (String word : words) {
-            TokenType tokenType = TokenType.VAR;
-            switch (word){
+            if (word.isEmpty()) {
+                continue; //pass over empty string
+            }
+
+            TokenType tokenType = TokenType.VAR;//default
+
+            switch (word) {
                 case "move":
                     tokenType = TokenType.MOVE;
                     break;
                 case "collect":
-                    tokenType =TokenType.COLLECT;
+                    tokenType = TokenType.COLLECT;
                     break;
                 case "quit":
                     tokenType = TokenType.QUIT;
@@ -45,22 +51,28 @@ public class Tokeniser {
                     tokenType = TokenType.ANALYZE;
                     break;
                 case "inspect":
-                    tokenType= TokenType.INSPECT;
+                    tokenType = TokenType.INSPECT;
                     break;
                 case "accuse":
-                    tokenType =TokenType.ACCUSE;
+                    tokenType = TokenType.ACCUSE;
+                    break;
+                case "use": //add alter
+                    tokenType = TokenType.USE;
                     break;
             }
-            tokens.add(new Token(tokenType, word));}
 
-        // Add EOL token at the end
+            tokens.add(new Token(tokenType, word));
+        }
+
+        //end of line
         tokens.add(new Token(TokenType.EOL, ""));
     }
-
-    public String sanitise(String s) {
-        if (s== null) {
-            return "";}
-        return s.toLowerCase().trim();
+    public String sanitise(String s){
+        if (s == null) {
+            return "";
+        }
+        //remove spaces
+        return s.toLowerCase().trim().replaceAll("\\s+", " ");
     }
 
     public ArrayList<Token> getTokens() {
