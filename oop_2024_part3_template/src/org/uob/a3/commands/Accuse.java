@@ -29,6 +29,8 @@ public class Accuse extends Command {
         if (isCorrect){
             return "Congratulations! You correctly accused " + value + " and solved the case!";
         } else {
+            gameState.reduceScore();
+            gameState.reduceScore();
             return "Your accusation of " +value+ " was incorrect. The case remains unsolved.";
 
         }

@@ -44,6 +44,7 @@ public class Move extends Command {
             //expect :
             //You move to the Hallway.
             //A dimly lit hallway.
+            gameState.reduceScore();
             return "You move to the " + targetLocation.getName() + ".\n" + targetLocation.getDescription();
         } else {
             //expected: <There is no location named 'Kitchen'.>

@@ -47,7 +47,7 @@ public class Game {
             tokeniser= new Tokeniser();
 
             if (gameState != null && gameState.getMansion() != null) {
-                // Initialize the starting room
+                //initialize the starting room
                 Location startingLocation = gameState.getMansion().getCurrentLocation();
                 if (startingLocation !=null) {
                     gameState.getMansion().setCurrentLocation(startingLocation.getId());
@@ -95,7 +95,14 @@ public class Game {
 
     //handles each turn in the game
     public static void turn(Command command) {
-        //gameState.getMap().displayMap();
+
+        //score check
+        if (gameState.getScore() <= 0){
+            System.out.println("Your Score is 0, you lost!");
+            System.exit(0);
+        }
+
+        //command executes
         if (command !=null&&gameState != null){
             System.out.println(command.execute(gameState));
             if (command.commandType==CommandType.QUIT) {

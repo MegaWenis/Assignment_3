@@ -18,6 +18,7 @@ public class GameState {
     private Player player;
     private List<Clue> collectedClues;
     private CaseResolution caseResolution;
+    private int score = 100;
 
     //blank gamestate
     public GameState() {
@@ -59,6 +60,14 @@ public class GameState {
     //set and get case resolution
     public CaseResolution getCaseResolution() {
         return caseResolution;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void reduceScore(){
+        score-=5;
     }
 
     public void setCaseResolution(CaseResolution caseResolution) {
