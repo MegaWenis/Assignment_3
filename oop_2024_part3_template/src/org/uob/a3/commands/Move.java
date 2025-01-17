@@ -22,6 +22,10 @@ public class Move extends Command {
 
     public String execute(GameState gameState) {
 
+        if (value==""||value==null) {
+            return "Move where? Please specify a location.";
+        }
+
         Mansion mansion = gameState.getMansion();
         String targetLocationName = value;
         Location targetLocation = null;
@@ -43,7 +47,7 @@ public class Move extends Command {
             return "You move to the " + targetLocation.getName() + ".\n" + targetLocation.getDescription();
         } else {
             //expected: <There is no location named 'Kitchen'.>
-            return "There is no location named " + targetLocationName + ".";
+            return "There is no location named '" + targetLocationName + "'.";
         }
     }
 
