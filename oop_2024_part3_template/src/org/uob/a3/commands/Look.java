@@ -30,7 +30,7 @@ public class Look extends Command {
 
             case "room":
                 lookResult.append(currentLocation.getName());
-                lookResult.append("\n");
+                lookResult.append("\n Description: ");
                 lookResult.append(gameState.getMansion().getCurrentLocation().getDescription());
 
                 //appending all visible objects
