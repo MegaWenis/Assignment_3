@@ -12,39 +12,48 @@ import org.uob.a3.gameobjects.*;
  */
 public class Collect extends Command {
 
-    public Collect(String clue){
+    public Collect(String clue) {
         this.commandType = CommandType.COLLECT;
         this.value = clue;
     }
 
     public String execute(GameState gamestate) {
         Location currentLocation = gamestate.getMansion().getCurrentLocation();
-        String clueName = this.value;
+        String clueName = this.value.trim().toLowerCase();
         Player player = gamestate.getPlayer();
 
-        if (clueName == null || clueName.trim().isEmpty()) {
+        if (clueName.isEmpty()) {
             return "You must specify a clue to collect.";
         }
 
+        clueName = resolveClueKeyword(clueName);
+
         if (currentLocation.hasClue(clueName)) {
+            Clue clue =currentLocation.getClueByName(clueName);
 
-            Clue clue = currentLocation.getClueByName(clueName);
-
-            if (clue ==null) {
+            if (clue == null) {
                 return "Clue '" + clueName + "' could not be found in the current location.";
             }
+
             if (player.getNotebook().hasClue(clueName)) {
-                return "You already have the clue '" + clueName +"' in your notebook.";
+                return "You already have the clue '" +clue.getName() + "' in your notebook.";
             }
 
-            //expected: <There is no clue matching 'invalid' in this location.> but was: <That clue is not present in the current location.>
-
-            //expected: <You collected the clue 'Mysterious Letter' and added it to your notebook.> but was: <That clue is not present in the current location.>
             player.getNotebook().addClue(clue);
 
             return "You collected the clue '"+ clue.getName() + "' and added it to your notebook.";
         }
 
-        return "There is no clue matching '"+clueName+"' in this location.";
+        return "There is no clue matching '" + clueName + "' in this location.";
+    }
+
+    //bloody formatting
+    private String resolveClueKeyword(String clueName) {
+        switch (clueName) {
+            case "letter":
+                return "Mysterious Letter";
+            default:
+                return clueName;
+        }
     }
 }
