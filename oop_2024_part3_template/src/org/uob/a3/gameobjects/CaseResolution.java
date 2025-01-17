@@ -55,7 +55,7 @@ public class CaseResolution {
         return resolved;
     }
 
-
+    /*
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -80,7 +80,7 @@ public class CaseResolution {
 
         return sb.toString();
     }
-
+    */
 
 }
 

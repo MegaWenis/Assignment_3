@@ -23,10 +23,14 @@ public class Collect extends Command {
         Player player = gamestate.getPlayer();
 
 
+        //Collecting a valid clue using a keyword should return a success message.
+        // ==> expected: <You collected the clue 'Mysterious Letter' and added it to your notebook.>
+        // but was: <You added letter to your notebook.>
+
         if (currentLocation.hasClue(clueName) || !player.getNotebook().hasClue(clueName)) {
             Clue clue = currentLocation.getClueByName(clueName);
             player.getNotebook().addClue(clue);
-            return "You added " + clueName + " to your notebook.";
+            return "You collected the clue '" + clue.getName() + "' and added it to your notebook.";
         }
 
         return "That clue is not present";
