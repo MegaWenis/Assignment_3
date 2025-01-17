@@ -18,7 +18,7 @@ public class Mansion {
     //constructs empty mansion
     public Mansion() {
         this.locations = new HashMap<>();
-        this.currentLocation = null;
+        this.currentLocation = new Location("-", "-", "-", true, "-");
         this.discoveredLocations = new HashSet<>();
     }
 

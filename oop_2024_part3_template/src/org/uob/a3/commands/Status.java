@@ -16,31 +16,30 @@ import java.util.stream.Collectors;
 
 public class Status extends Command {
 
-
     public Status(String topic) {
         this.value = topic;
-        this.commandType = commandType.STATUS;
-    }
+        this.commandType = CommandType.STATUS;}
 
-
-    public String execute(GameState gameState) {
+    public String execute(GameState gameState){
         String topic = value;
 
-        //status can target: notebook, player, map
+        if (topic == null || topic.isEmpty()){
+            return "Status what? Please specify a valid topic.";
+        }
 
-        switch (topic.toLowerCase()){
+        switch (topic.toLowerCase()) {
             case "notebook":
-                return gameState.getPlayer().getNotebook().toString();
+                return "Notebook status:\n" +gameState.getPlayer().getNotebook().toString();
 
             case "player":
                 return "Player status:\n" + gameState.getPlayer().toString();
 
-            case "map" :
-                return gameState.getMansion().toString();
+            case "map": return "Map status:\n" + gameState.getMansion().toString();
 
-            default: return "Please type 'status' followed by a keyword: 'notebook', 'player', 'map'";
+            default:
+                return "Invalid status topic: " + topic + ".";
         }
     }
-
 }
+
 

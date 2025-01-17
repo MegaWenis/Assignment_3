@@ -14,6 +14,7 @@ public class Location extends GameObject {
     private final boolean isLocked;
     private final  String requiredClueId;
 
+
     //constructor
     public Location(String id, String name, String description, boolean isLocked, String requiredClueId) {
         super(id, name, description);

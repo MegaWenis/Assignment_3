@@ -17,7 +17,7 @@ public class Player extends Object {
 
     //constructor for Player
     public Player() {
-        this.name = "Unknown";
+        this.name = null;
         this.notebook = new Notebook();
     }
 

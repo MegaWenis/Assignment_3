@@ -68,19 +68,19 @@ public class GameState {
 
     //to String
     @Override
-    public String toString() {
+    public String toString(){
         StringBuilder gameStateDescription = new StringBuilder();
-
-        //dumb formating
         gameStateDescription.append("GameState {");
+
+        //notebook is in player tostring
         gameStateDescription.append("mansion=").append(mansion.toString()).append(", ");
         gameStateDescription.append("player=").append(player.toString()).append(", ");
-        gameStateDescription.append("Notebook:").append(player.getNotebook().toString()).append(", ");
+
         gameStateDescription.append("collectedClues=").append(collectedClues.toString()).append(", ");
-        gameStateDescription.append("caseResolution=").append(caseResolution.toString());
-        gameStateDescription.append("}");
+        gameStateDescription.append("caseResolution=").append(caseResolution.toString()).append("}");
 
         return gameStateDescription.toString();
     }
+
 
 }
