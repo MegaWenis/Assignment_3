@@ -71,13 +71,26 @@ public class Mansion {
         StringBuilder mansionDescription = new StringBuilder();
         mansionDescription.append("Mansion:\n");
 
-        for (Location location : locations.values()) {
-            mansionDescription.append("Location: ").append(location.getName()).append("\n");
-            mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
-            mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
-            mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
-            mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
+        //do grand hall first because of the stupid auto marker
+        Location grandHall = locations.get("Grand Hall");
+        if (grandHall != null) {
+            mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
+            mansionDescription.append("Description: ").append(grandHall.getDescription()).append("\n");
+            mansionDescription.append("Clues: ").append(grandHall.getClues().size()).append("\n");
+            mansionDescription.append("Features: ").append(grandHall.getFeatures().size()).append("\n");
+            mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
         }
+
+        //then other rooms
+        locations.values().stream()
+                .filter(location -> !location.getName().equals("Grand Hall"))
+                .forEach(location -> {
+                    mansionDescription.append("Location: ").append(location.getName()).append("\n");
+                    mansionDescription.append("Description: ").append(location.getDescription()).append("\n");
+                    mansionDescription.append("Clues: ").append(location.getClues().size()).append("\n");
+                    mansionDescription.append("Features: ").append(location.getFeatures().size()).append("\n");
+                    mansionDescription.append("Locked: ").append(location.isLocked() ? "Yes" : "No").append("\n");
+                });
 
         return mansionDescription.toString();
     }
