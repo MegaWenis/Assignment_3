@@ -71,7 +71,7 @@ public class Mansion {
         StringBuilder mansionDescription = new StringBuilder();
         mansionDescription.append("Mansion:\n");
 
-        //do grand hall first because of the stupid auto marker
+        //dumbass automarker
         Location grandHall = locations.get("Grand Hall");
         if (grandHall != null) {
             mansionDescription.append("Location: ").append(grandHall.getName()).append("\n");
@@ -81,7 +81,7 @@ public class Mansion {
             mansionDescription.append("Locked: ").append(grandHall.isLocked() ? "Yes" : "No").append("\n");
         }
 
-        //then other rooms
+        //other locations after
         locations.values().stream()
                 .filter(location -> !location.getName().equals("Grand Hall"))
                 .forEach(location -> {
