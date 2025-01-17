@@ -42,7 +42,8 @@ public class Move extends Command {
             //A dimly lit hallway.
             return "You move to the " + targetLocation.getName() + ".\n" + targetLocation.getDescription();
         } else {
-            return "You cannot move to " + targetLocationName + ". It is not an available location.";
+            //expected: <There is no location named 'Kitchen'.>
+            return "There is no location named " + targetLocationName + ".";
         }
     }
 
