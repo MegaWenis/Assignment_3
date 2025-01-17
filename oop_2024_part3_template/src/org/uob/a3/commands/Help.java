@@ -48,11 +48,11 @@ public class Help extends Command {
             case "move":
                 return "MOVE Command: Move in a specific location. Example: MOVE hallway.";
             case "collect":
-                return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook.";
+                return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook. eg 'move Hallway'";
             case "analyze":
                 return "ANALYZE Command: Look in detail at a specific feature in the room to discover details about it.";
             case "accuse":
-                return "ACCUSE Command: Accuse a suspect once you are sure it is them, if correct you win the game.";
+                return "ACCUSE Command: Accuse a suspect once you are sure it is them, if correct you win the game. eg ('accuse Moriarty')";
             case "look":
                 return "LOOK Command: Look around the current room and see what's available.";
             case "status":
