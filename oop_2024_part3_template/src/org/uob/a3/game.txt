@@ -19,6 +19,6 @@ location,loc7,Billiards,The billiards room is mostly untouched from the violence
 clue,sigill,leftSigill,This looks like it's missing a piece,["left";"piece"],2,unlocks vault when completed
 location,loc8,Kitchen,A modest kitchen - something on the table catches your eye,false,
 clue,sigill,rightSigill,This looks like it is missing another piece,["right";"piece"],3,unlocks vault when completed
-location,loc9,store,This room is inaccessible,true,unkown
+location,loc9,store,This room is inaccessible,false,unknown
 clue,completSigill,sigill,The crest of house Orlov emits power,["power";"complete"],4,unlocks vault
 caseResolution,["letter";"key";"tome"],Moriarty
