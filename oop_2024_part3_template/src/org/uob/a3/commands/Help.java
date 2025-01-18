@@ -48,7 +48,7 @@ public class Help extends Command {
             case "move":
                 return "MOVE Command: Move in a specific location. (e.g., ’move north’)";
             case "collect":
-                return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook. (e.g., ’collect key’)";
+                return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook. (e.g., ’collect Key’)";
             case "analyze":
                 return "ANALYZE Command: Look in detail at a specific feature in the room to discover details about it. (e.g., ’analyze clue_name’)";
             case "accuse":

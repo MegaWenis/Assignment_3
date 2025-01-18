@@ -62,7 +62,7 @@ public enum TokenType {
     /**
      * Represents the "quit" command.
      */
-    QUIT,
+    EXIT,
 
     TOUCH,
 

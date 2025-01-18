@@ -57,7 +57,7 @@ public class Parser {
 
             case "score":return new Score();
 
-            case "quit": return new Quit();
+            case "exit": return new Exit();
             case "status":
                 String topicStatus = tokens.get(1).getValue();
                 return new Status(topicStatus);

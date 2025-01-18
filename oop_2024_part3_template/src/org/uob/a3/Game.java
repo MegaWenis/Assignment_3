@@ -36,7 +36,8 @@ public class Game {
         //CHANGE FILENAME LOCATION TO NEW ONE
         // assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt
         // /jupyter/work/bsi418/src/org/uob/a2/game.txt
-        String fileName = "/jupyter/work/assignment-3/oop_2024_part3_template/src/org/uob/a3/game.txt";
+        //As 3, Gitless/oop_2024_part3_template/src/org/uob/a3/game.txt
+        String fileName = "/jupyter/work/As 3, Gitless/oop_2024_part3_template/src/org/uob/a3/game.txt";
         System.out.println("Attempting to load game state from: " + fileName);
 
         try {
