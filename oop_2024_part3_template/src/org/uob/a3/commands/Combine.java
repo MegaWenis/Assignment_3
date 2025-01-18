@@ -21,6 +21,9 @@ public class Combine extends Command {
             Clue clue1 = notebook.getClueByName(item1);
             String item2 = items[1].trim();
             Clue clue2 = notebook.getClueByName(item2);
+            System.out.println(item1+" "+item2);
+            System.out.println(clue2.getHint()+" "+clue1.getHint());
+            System.out.println(clue2.getName()+" "+clue1.getName());
 
             if (notebook.hasClue(item1)&&notebook.hasClue(item2)) {
                 if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
