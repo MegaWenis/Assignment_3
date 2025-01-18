@@ -64,6 +64,8 @@ public enum TokenType {
      */
     QUIT,
 
+    COMBINE,
+
     TOUCH,
 
     /**
