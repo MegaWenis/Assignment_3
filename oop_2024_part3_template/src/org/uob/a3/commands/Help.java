@@ -14,7 +14,7 @@ public class Help extends Command {
     }
 
     public String execute(GameState gameState) {
-        if (value==null){
+        if (value==null||value.isEmpty()){
             return generalHelp();
         }
         else {
