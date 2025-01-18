@@ -12,13 +12,13 @@ ghost,ghost1,Countess Constantinescu, Beware inspector nothing is as it seems in
 location,loc4,DiningRoom,A supremely pompous dining room with mahogany furniture and velvet accents, false, null
 feature,feat4,TableCloth,The table cloth is spattered with blood *how awful*
 clue,clue4,crowbar,A heavy tool maybe used on a door,["tool";"strong"],7,Basement
-location,loc5,Vault,A heavily secured door with a slot for a circular item, true, null
+location,loc5,Vault,A heavily secured door with a slot for a circular item, true, completeSigill
 location,loc6,Basement,Cobwebs stretch from head to toe over barrels - a pool of blood emerges from one, true, clue4
 ghost,ghost2,Arthur Rochester, I was a servant here for many years - I was tasked with bleeding animals and storing the blood here - Until my own blood was needed - those in power are responsible
-location,loc7,Billiards,The billiards room is mostly untouched from the violence a shiny object catches your eye, false, sigill
+location,loc7,Billiards,The billiards room is mostly untouched from the violence a shiny object catches your eye, false,
 clue,sigill,leftSigill,This looks like it's missing a piece,["left";"piece"],2,unlocks vault when completed
-location,loc8,Kitchen,A modest kitchen - something on the table catches your eye,false,sigill
+location,loc8,Kitchen,A modest kitchen - something on the table catches your eye,false,
 clue,sigill,rightSigill,This looks like it is missing another piece,["right";"piece"],3,unlocks vault when completed
-location,loc9,store,This room is inaccessible,true,sigill
+location,loc9,store,This room is inaccessible,true,unkown
 clue,completSigill,sigill,The crest of house Orlov emits power,["power";"complete"],4,unlocks vault
 caseResolution,["letter";"key";"tome"],Moriarty
