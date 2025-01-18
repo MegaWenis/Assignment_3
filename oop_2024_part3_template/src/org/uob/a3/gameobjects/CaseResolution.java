@@ -34,10 +34,15 @@ public class CaseResolution {
             correctPlayer = true;
         }
 
+        if (solution.equalsIgnoreCase(playerSolution.trim())){
+            correctPlayer = true;}
+
         if (player.getNotebook().containsAll(requiredClues) && correctPlayer) {
             resolved = true;
             return true;
         }
+
+
         return false;
     }
 

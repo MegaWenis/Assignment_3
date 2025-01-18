@@ -32,7 +32,7 @@ public class Combine extends Command {
                     Clue newClue = gameState.getMansion().getLocationByName("store").getClueByName(clue1.getId());
                     System.out.println(clue1.getHint());
                     notebook.addClue(newClue);
-                    return "You combined the " + item1 + " with " + item2 + " into " + newClue.getName();
+                    return "You combined the " + item1 + " with " + item2 + " into " + newClue.getId();
                 } else {
                     return "These items do not combine.";
                 }
