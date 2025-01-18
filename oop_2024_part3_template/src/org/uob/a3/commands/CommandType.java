@@ -55,6 +55,8 @@ public enum CommandType {
      */
     HELP,
 
+    TOUCH, // touch bloodstains to see ghosts
+
     /**
      * Represents a command to quit the game.
      */

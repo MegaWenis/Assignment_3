@@ -46,6 +46,7 @@ public class Parser {
             case "accuse": if(argument.isEmpty()){throw exception;}
                 return new Accuse(argument);
 
+
             case "move": if(argument.isEmpty()){throw exception;}
                 return new Move(argument);
 
@@ -63,6 +64,9 @@ public class Parser {
             case "help":
                 String topicHelp = tokens.get(1).getValue();
                 return new Help(topicHelp);
+            case "touch":
+                String topicTouch = tokens.get(1).getValue();
+                return new Touch(topicTouch);
             default:
                 throw exception;
         }

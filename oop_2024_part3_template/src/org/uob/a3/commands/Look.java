@@ -28,6 +28,9 @@ public class Look extends Command {
         //executing look depending on the target class
         switch (target.toLowerCase()) {
 
+            case "map":
+                lookResult.append(gameState.getMansion().displayMap());
+
             case "room":
                 lookResult.append(currentLocation.getName());
                 lookResult.append("\n Description: ");

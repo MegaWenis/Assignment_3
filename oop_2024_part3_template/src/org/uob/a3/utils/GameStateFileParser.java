@@ -122,6 +122,13 @@ public class GameStateFileParser {
                 String solution =parts[2];
                 CaseResolution caseResolution = new CaseResolution(GameStateFileParser.parseKeywords(parts[1]), solution);
                 g.setCaseResolution(caseResolution);
+            }else if (entry.startsWith("ghost") && currentLocation != null) {
+                String[] parts = entry.split(",", 4);
+                String id = parts[1];
+                String name = parts[2];
+                String description = parts[3];
+
+                currentLocation.addGhost(new Ghost(id, name, description));
             }
         }
         g.getMansion().setLocations(locations);

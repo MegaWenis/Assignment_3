@@ -5,9 +5,10 @@ clue,clue1,Note,The creased note has a blood stain,["letter";"mysterious"],5,Tim
 location,loc2,Hallway,A dimly lit hallway,false,clue2
 feature,feat2,Portrait,A painting of Count Orlov how terrifying
 clue,clue2,Key,A small key hidden under a tile,["key";"hidden"],7,This might open something important
-location,loc3,Study,A quiet study with a grandfather clock in the corner,true,clue3
+location,loc3,Study,A quiet study with a blood-stained grandfather clock in the corner,true,clue3
 feature,feat3,Desk,A large mahogany desk with locked drawers
 clue,clue3,Grandfather Clock,An ancient clock that does not seem to work,["clock";"ancient"],10,The broken clock contains something *type fix clock*.
 location,loc4,DiningRoom,A supremely pompous dining room with mahogany furniture and velvet accents, false, null
 feature,feat4,TableCloth,The table cloth is spattered with blood *how awful*
+location,loc5,Vault,A heavily secured door with a slot for a circular item, true, null
 caseResolution,["letter";"key";"tome"],Moriarty

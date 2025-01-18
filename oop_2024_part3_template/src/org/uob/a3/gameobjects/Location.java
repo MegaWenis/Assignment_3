@@ -13,6 +13,7 @@ public class Location extends GameObject {
     private final ArrayList<Feature> features;
     private final boolean isLocked;
     private final  String requiredClueId;
+    private Ghost ghost;
 
 
     //constructor
@@ -22,7 +23,9 @@ public class Location extends GameObject {
         this.features = new ArrayList<>();
         this.isLocked = isLocked;
         this.requiredClueId = requiredClueId;
+        this.ghost = null;
     }
+
 
     //adding location characteristics
     public void addClue(Clue clue) {
@@ -30,6 +33,14 @@ public class Location extends GameObject {
 
     public void addFeature(Feature feature) {
         features.add(feature);
+    }
+
+    public void addGhost(Ghost ghost) {
+        this.ghost = ghost;
+    }
+
+    public Ghost getGhost(){
+        return ghost;
     }
 
     //returns the clues in a given location
