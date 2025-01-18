@@ -64,6 +64,8 @@ public enum TokenType {
      */
     QUIT,
 
+    TOUCH,
+
     /**
      * Represents the "status" command.
      */

@@ -47,6 +47,9 @@ public class Tokeniser {
                 case "look":
                     tokenType = TokenType.LOOK;
                     break;
+                case "touch":
+                    tokenType = TokenType.TOUCH;
+                    break;
                 case "analyze":
                     tokenType = TokenType.ANALYZE;
                     break;
