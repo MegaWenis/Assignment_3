@@ -1,7 +1,7 @@
 player,Leon
 location,loc1,Lobby,An open lobby with a glistening chandelier,false,
 feature,feat1,Bookshelf,An old bookshelf covered in cobwebs
-clue,clue1,Note,The creased note has some scrawled writing,["letter";"mysterious"],5,Time will reveal all signed Count Orlov.
+clue,clue1,Note,The creased note has some scrawled writing,["letter";"mysterious"],5,Time will reveal all signed Count ... *the writing fades*
 location,loc2,Hallway,A dimly lit hallway,false,
 feature,feat2,Portrait,A painting of Count Orlov how terrifying
 clue,clue2,Key,A small key hidden under a tile,["key";"hidden"],7,This might open something important
@@ -11,8 +11,9 @@ clue,clue3,GrandfatherClock,An ancient clock spattered with blood - that does no
 ghost,ghost1,Countess Constantinescu, Beware inspector nothing is as it seems in this unholy place - Be suspicious of the men here
 location,loc4,DiningRoom,A supremely pompous dining room with mahogany furniture and velvet accents, false,
 feature,feat4,TableCloth,The table cloth is spattered with blood *how awful*
-clue,clue4,crowbar,A heavy tool maybe used on a door,["tool";"strong"],7,Basement
-location,loc5,Vault,A heavily secured door with a slot for a circular item,true,completeSigill
+clue,clue4,crowbar,A heavy tool maybe used on a door,["tool";"strong"],7,toilet
+location,loc5,Vault,This is no vault - it is a prison - something is scratched onto the wall,true,completeSigill
+clue,clue5,scribing,The nightmare of this mansion is called Orlov,["Orlov";"killer"],13,Vault
 location,loc6,Basement,Cobwebs stretch from head to toe over barrels - a pool of blood emerges from one,true,clue4
 ghost,ghost2,Arthur Rochester, I was a servant here for many years - I was tasked with bleeding animals and storing the blood here - Until my own blood was needed - those in power are responsible
 location,loc7,Billiards,The billiards room is mostly untouched from the violence a shiny object catches your eye,false,
@@ -21,4 +22,5 @@ location,loc8,Kitchen,A modest kitchen - something on the table catches your eye
 clue,sigill,rightSigill,This looks like it is missing another piece,["right";"piece"],3,unlocks vault when completed
 location,loc9,store,This room is inaccessible,false,unknown
 clue,completeSigill,sigill,The crest of house Orlov emits power,["power";"complete"],4,unlocks vault
+location,loc10,toilet,there is nothing of note in this room - get back to work!,false,
 caseResolution,["letter";"key";"tome"],Moriarty
