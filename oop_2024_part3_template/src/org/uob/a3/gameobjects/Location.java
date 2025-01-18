@@ -12,17 +12,23 @@ public class Location extends GameObject {
     private final ArrayList<Clue> clues;
     private final ArrayList<Feature> features;
     private final boolean isLocked;
-    private final  String requiredClueId;
+    private final String requiredClueId;
     private Ghost ghost;
 
-
-    //constructor
+    // Constructor
     public Location(String id, String name, String description, boolean isLocked, String requiredClueId) {
         super(id, name, description);
         this.clues = new ArrayList<>();
         this.features = new ArrayList<>();
         this.isLocked = isLocked;
-        this.requiredClueId = requiredClueId;
+
+        //null if empty
+        if (requiredClueId == null || requiredClueId.trim().isEmpty()) {
+            this.requiredClueId = null;
+        } else {
+            this.requiredClueId = requiredClueId;
+        }
+
         this.ghost = null;
     }
 
