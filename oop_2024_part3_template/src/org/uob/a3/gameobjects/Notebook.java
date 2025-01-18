@@ -32,7 +32,9 @@ public class Notebook extends GameObject {
             if (clue.getName().equalsIgnoreCase(clueName)) {
                 return clue;
             }
-        } return null;
+        }
+        System.out.println("Clue with name '" + clueName + "' not found.");
+        return null;
     }
 
     //returns the list of clues
