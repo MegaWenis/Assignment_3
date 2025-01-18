@@ -60,7 +60,7 @@ public enum CommandType {
     /**
      * Represents a command to quit the game.
      */
-    EXIT,
+    QUIT,
 
     SCORE
     //returns the score

@@ -8,7 +8,7 @@ import org.uob.a3.gameobjects.Ghost;
 
 public class Touch extends Command {
     public Touch(String Target) {
-        this.commandType = CommandType.QUIT;
+        this.commandType = CommandType.TOUCH;
         this.value = Target;
     }
 

@@ -10,9 +10,9 @@ import org.uob.a3.gameobjects.*;
  * current status before termination.
  * </p>
  */
-public class Exit extends Command {
-    public Exit() {
-        this.commandType = CommandType.EXIT;
+public class Quit extends Command {
+    public Quit() {
+        this.commandType = CommandType.QUIT;
         this.value = null;
     }
 
