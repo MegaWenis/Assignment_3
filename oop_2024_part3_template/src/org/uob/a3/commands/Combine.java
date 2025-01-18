@@ -14,11 +14,10 @@ public class Combine extends Command {
         String[] items = value.split(",");
         if (items.length == 2) {
             Notebook notebook = gameState.getPlayer().getNotebook();
+            //takes two items by splitting
             String item1 = items[0].trim();
             String item2 = items[1].trim();
 
-            System.out.println("Parsed item1: " + item1);
-            System.out.println("Parsed item2: " + item2);
 
             Clue clue1 = notebook.getClueByName(item1);
             Clue clue2 = notebook.getClueByName(item2);
@@ -27,11 +26,16 @@ public class Combine extends Command {
                 return "One or both clues were not found in your notebook.";
             }
 
+            //check if you have items
             if (notebook.hasClue(item1) && notebook.hasClue(item2)) {
                 if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
+
                     Clue newClue = gameState.getMansion().getLocationByName("store").getClueByName(clue1.getId());
-                    System.out.println(clue1.getHint());
+
+                    //add clue
                     notebook.addClue(newClue);
+
+                    //return
                     return "You combined the " + item1 + " with " + item2 + " into " + newClue.getId();
                 } else {
                     return "These items do not combine.";

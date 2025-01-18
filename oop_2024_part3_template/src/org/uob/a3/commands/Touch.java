@@ -13,9 +13,11 @@ public class Touch extends Command {
     }
 
     public String execute(GameState gameState) {
-
+        //take input
         String target = value;
         Mansion mansion = gameState.getMansion();
+
+        //gets ghost in this location
         Location currentLocation = mansion.getCurrentLocation();
         Ghost thisGhost = currentLocation.getGhost();
 
@@ -23,6 +25,8 @@ public class Touch extends Command {
             return "There is nothing here worth touching.";
 
         }
+
+        //checking if typed blood
         if (target.equalsIgnoreCase("blood")||target.equalsIgnoreCase("bloodstain")) {
             return "You reached and touched the blood\nThe ghost: "+thisGhost.getName()+" appeared!\n"+"'"+thisGhost.getDescription()+"'";
         }
