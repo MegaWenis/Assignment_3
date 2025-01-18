@@ -29,7 +29,7 @@ public class Combine extends Command {
 
             if (notebook.hasClue(item1) && notebook.hasClue(item2)) {
                 if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
-                    Clue newClue = gameState.getMansion().getLocationByName("store").getClue(clue1.getId());
+                    Clue newClue = gameState.getMansion().getLocationByName("store").getClueByName(clue1.getId());
                     System.out.println(clue1.getHint());
                     notebook.addClue(newClue);
                     return "You combined the " + item1 + " with " + item2 + " into " + newClue.getName();
