@@ -33,8 +33,10 @@ public class Help extends Command {
                 - INSPECT: Inspect a feature in the current room (e.g., ’inspect feature_name’).
                 - ACCUSE: Accuse a suspect to attempt to resolve the case (e.g., ’accuse suspect_name’).
                 - STATUS: View your current status, notebook, and player.
+                - TOUCH: Touch a blood stain to use your vampire abilities
                 - HELP [topic]: Get help about a specific command or leave topic blank for general gameplay.
                 - QUIT: Quit the game.
+              
                 
                 Explore and gather items to progress :)
                 Have fun exploring and good luck!
@@ -47,6 +49,8 @@ public class Help extends Command {
         switch (topic.toLowerCase()) {
             case "move":
                 return "MOVE Command: Move in a specific location. (e.g., ’move north’)";
+            case "touch":
+                return "TOUCH Command: Touch a blood stain to summon a ghost.";
             case "collect":
                 return "COLLECT Command: Collect a clue from the room if it is present and add it to your notebook. (e.g., ’collect Key’)";
             case "analyze":

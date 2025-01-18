@@ -74,8 +74,8 @@ public class Game {
     public static void start()
     {
         boolean running = true;
-        System.out.println("Welcome to Karlov Manor, your wife went missing here one week ago");
-        System.out.println("You are Leon Kennedy\nTrained detective\nYou must find out what happened to her.");
+        System.out.println("Welcome to Karlov Manor, a terrible murder has taken place here");
+        System.out.println("Your name is Victor Orbenstein\nVampire detective\nYou must find out what secrets this place holds.");
         //main game loop
         while(running){
             System.out.println("-> ");
