@@ -18,6 +18,16 @@ public class Notebook extends GameObject {
             clues.add(clue);
         }
     }
+
+    //checks if notebook has item by id
+    public boolean hasClueById(String clueId){
+        for (Clue clue : clues) {
+            if (clue.getId().equalsIgnoreCase(clueId)) {
+                return true;
+            }
+        } return false;
+    }
+
     //checks if notebook conatains certain clue by name
     public boolean hasClue(String clueName) {
         for (Clue clue : clues) {
@@ -34,6 +44,16 @@ public class Notebook extends GameObject {
             }
         }
         System.out.println("Clue with name '" + clueName + "' not found.");
+        return null;
+    }
+
+    public Clue getClueById(String clueId) {
+        for (Clue clue : clues) {
+            if (clue.getId().equalsIgnoreCase(clueId)) {
+                return clue;
+            }
+        }
+        System.out.println("Clue with name '" + clueId + "' not found.");
         return null;
     }
 

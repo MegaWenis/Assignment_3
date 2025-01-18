@@ -43,6 +43,10 @@ public class Location extends GameObject {
         return ghost;
     }
 
+    public String getRequiredClueId(){
+        return requiredClueId;
+    }
+
     //returns the clues in a given location
     public ArrayList<Clue> getClues(){
         return new ArrayList<>(clues);
@@ -56,6 +60,7 @@ public class Location extends GameObject {
         }
         return null;
     }
+
 
     //returns the clue with inputted name
     public Clue getClueByName(String name) {

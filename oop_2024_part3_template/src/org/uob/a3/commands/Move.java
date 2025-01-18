@@ -22,15 +22,15 @@ public class Move extends Command {
 
     public String execute(GameState gameState) {
 
-        if (value==""||value==null) {
+        if (value== null || value.isEmpty()) {
             return "Move where? Please specify a location.";
         }
 
         Mansion mansion = gameState.getMansion();
-        String targetLocationName = value;
+        String targetLocationName = value.trim();
         Location targetLocation = null;
 
-        //check for location and ignore cases
+       //fund the location
         for (Location location :mansion.getLocations()) {
             if (location.getName().equalsIgnoreCase(targetLocationName)) {
                 targetLocation = location;
@@ -38,19 +38,33 @@ public class Move extends Command {
             }
         }
 
-        if (targetLocation !=null) {
-            String targetLocationID = targetLocation.getId();
-            mansion.setCurrentLocation(targetLocationID);
-            //expect :
-            //You move to the Hallway.
-            //A dimly lit hallway.
-            gameState.reduceScore();
-            return "You move to the " + targetLocation.getName() + ".\n" + targetLocation.getDescription();
-        } else {
-            //expected: <There is no location named 'Kitchen'.>
-            return "There is no location named '" + targetLocationName + "'.";
+
+        if (targetLocation == null) {
+            return"There is no location named '" + targetLocationName + "'.";
         }
+
+        //if a clue is needed to enter the location
+        if (targetLocation.getRequiredClueId() != null) {
+            String neededClueId = targetLocation.getRequiredClueId();
+            Clue neededClue =gameState.getPlayer().getNotebook().getClueById(neededClueId);
+
+            if (neededClue != null) {
+                //update current location
+                mansion.setCurrentLocation(targetLocation.getId());
+                gameState.reduceScore();
+                return "You move to the " + targetLocation.getName()+ " using " + neededClue.getName() + ".\n"
+                        + targetLocation.getDescription();
+            } else {
+                return "You need the clue '" + neededClueId +"' to enter the " + targetLocation.getName() + ".";
+            }
+        }
+
+
+        mansion.setCurrentLocation(targetLocation.getId());
+        gameState.reduceScore();
+        return "You move to the " + targetLocation.getName() +".\n" + targetLocation.getDescription();
     }
+
 
 }
 
