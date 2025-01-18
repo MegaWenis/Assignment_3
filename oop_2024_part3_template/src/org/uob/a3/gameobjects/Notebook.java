@@ -21,12 +21,19 @@ public class Notebook extends GameObject {
     //checks if notebook conatains certain clue by name
     public boolean hasClue(String clueName) {
         for (Clue clue : clues) {
-            if (clue.getName().equals(clueName)) {
+            if (clue.getName().equalsIgnoreCase(clueName)) {
                 return true;
             }
         } return false;
     }
 
+    public Clue getClueByName(String clueName) {
+        for (Clue clue : clues) {
+            if (clue.getName().equalsIgnoreCase(clueName)) {
+                return clue;
+            }
+        } return null;
+    }
 
     //returns the list of clues
     public List<Clue> getClues() {

@@ -16,12 +16,21 @@ public class Combine extends Command {
 
 
         if (items.length == 2) {
+            Notebook notebook = gameState.getPlayer().getNotebook();
             String item1 = items[0].trim();
+            Clue clue1 = notebook.getClueByName(item1);
             String item2 = items[1].trim();
+            Clue clue2 = notebook.getClueByName(item2);
 
-
-            return "You combined the " +item1+" with " +item2+ "into";
-
+            if (notebook.hasClue(item1)&&notebook.hasClue(item2)) {
+                if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
+                    Clue newClue = gameState.getMansion().getLocationByName("store").getClue(clue1.getHint());
+                    notebook.addClue(newClue);
+                    return "You combined the " + item1 + " with " + item2 + " into " + newClue.getName();
+                } else {
+                    return "these items do not combine.";
+                }
+            } return "you dont have these clues.";
 
         } else {
             return "Invalid input. Please provide two items separated by a comma.";

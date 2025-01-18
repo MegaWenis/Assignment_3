@@ -17,6 +17,8 @@ location,loc6,Basement,Cobwebs stretch from head to toe over barrels - a pool of
 ghost,ghost2,Arthur Rochester, I was a servant here for many years - I was tasked with bleeding animals and storing the blood here - Until my own blood was needed - those in power are responsible
 location,loc7,Billiards,The billiards room is mostly untouched from the violence a shiny object catches your eye, false, sigill
 clue,sigill,leftSigill,This looks like it's missing a piece,["left";"piece"],2,unlocks vault when completed
-location,loc8,Kitchen,A modest kitchen - something on the table catches your eye,false,sigill,
+location,loc8,Kitchen,A modest kitchen - something on the table catches your eye,false,sigill
 clue,sigill,rightSigill,This looks like it is missing another piece,["right";"piece"],3,unlocks vault when completed
+location,loc9,store,This room is inaccessible,true,sigill
+clue,completSigill,sigill,The crest of house Orlov emits power,["power";"complete"],4,unlocks vault
 caseResolution,["letter";"key";"tome"],Moriarty
