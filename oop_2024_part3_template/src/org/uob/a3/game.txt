@@ -26,4 +26,4 @@ location,loc9,store,This room is inaccessible,false,unknown
 clue,completeSigill,sigill,The crest of house Orlov emits power,["power";"complete"],4,unlocks vault
 location,loc10,toilet,there is nothing of note in this room - get back to work!,false,
 feature,feat7,toilet,Seriously ... get back to work
-caseResolution,["Note";"crowbar";"completeSigill"],CountOrlov
+caseResolution,["Note";"crowbar";"sigill"],CountOrlov
