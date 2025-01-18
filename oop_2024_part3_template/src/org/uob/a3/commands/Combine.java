@@ -9,41 +9,48 @@ public class Combine extends Command {
     }
 
     public String execute(GameState gameState) {
-        String itemsComma = value.trim();
-        String extractedItems = itemsComma.substring(8).trim(); // Remove 'combine ' and trim
-        System.out.println("Extracted items: " + extractedItems);
+        // Log the raw input
+        System.out.println("Raw input value: " + value);
 
-        String[] items = extractedItems.split(",");
-        if (items.length == 2) {
-            Notebook notebook = gameState.getPlayer().getNotebook();
-            String item1 = items[0].trim();
-            String item2 = items[1].trim();
+        if (value.toLowerCase().startsWith("combine ")) {
+            String extractedItems = value.substring(8).trim(); // Safely extract the arguments
+            System.out.println("Extracted items: " + extractedItems);
 
-            System.out.println("Parsed item1: " + item1);
-            System.out.println("Parsed item2: " + item2);
+            String[] items = extractedItems.split(",");
+            if (items.length == 2) {
+                Notebook notebook = gameState.getPlayer().getNotebook();
+                String item1 = items[0].trim();
+                String item2 = items[1].trim();
 
-            Clue clue1 = notebook.getClueByName(item1);
-            Clue clue2 = notebook.getClueByName(item2);
+                System.out.println("Parsed item1: " + item1);
+                System.out.println("Parsed item2: " + item2);
 
-            if (clue1 == null || clue2 == null) {
-                return "One or both clues were not found in your notebook.";
-            }
+                Clue clue1 = notebook.getClueByName(item1);
+                Clue clue2 = notebook.getClueByName(item2);
 
-            if (notebook.hasClue(item1) && notebook.hasClue(item2)) {
-                if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
-                    Clue newClue = gameState.getMansion().getLocationByName("store").getClue(clue1.getHint());
-                    notebook.addClue(newClue);
-                    return "You combined the " + item1 + " with " + item2 + " into " + newClue.getName();
+                if (clue1 == null || clue2 == null) {
+                    return "One or both clues were not found in your notebook.";
+                }
+
+                if (notebook.hasClue(item1) && notebook.hasClue(item2)) {
+                    if (clue1.getHint().equalsIgnoreCase(clue2.getHint())) {
+                        Clue newClue = gameState.getMansion().getLocationByName("store").getClue(clue1.getHint());
+                        notebook.addClue(newClue);
+                        return "You combined the " + item1 + " with " + item2 + " into " + newClue.getName();
+                    } else {
+                        return "These items do not combine.";
+                    }
                 } else {
-                    return "These items do not combine.";
+                    return "You don't have these clues.";
                 }
             } else {
-                return "You don't have these clues.";
+                return "Invalid input. Please provide two items separated by a comma.";
             }
         } else {
-            return "Invalid input. Please provide two items separated by a comma.";
+            return "Invalid command. Please start with 'combine'.";
         }
     }
+
 
 
 
