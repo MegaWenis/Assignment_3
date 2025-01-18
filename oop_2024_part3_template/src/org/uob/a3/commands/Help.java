@@ -34,6 +34,7 @@ public class Help extends Command {
                 - ACCUSE: Accuse a suspect to attempt to resolve the case (e.g., ’accuse suspect_name’).
                 - STATUS: View your current status, notebook, and player.
                 - TOUCH: Touch a blood stain to use your vampire abilities
+                - COMBINE: Attempt to combine two objects (e,g., 'combine item1,item2').
                 - HELP [topic]: Get help about a specific command or leave topic blank for general gameplay.
                 - QUIT: Quit the game.
               
@@ -57,6 +58,8 @@ public class Help extends Command {
                 return "ANALYZE Command: Look in detail at a specific feature in the room to discover details about it. (e.g., ’analyze clue_name’)";
             case "accuse":
                 return "ACCUSE Command: Accuse a suspect once you are sure it is them, if correct you win the game. (e.g., ’accuse suspect_name’)";
+            case "combine":
+                return "COMBINE Command: Attempt to combine two objects (e,g., 'combine item1,item2').";
             case "look":
                 return "LOOK Command: Look around the current room and see what's available.";
             case "status":
